@@ -1001,6 +1001,18 @@
 
   /* ==================== TIMETABLE ==================== */
   .timetable{ background: var(--bg-2); }
+  .tt-tabs{
+    display: flex; width: fit-content; padding: 5px;
+    background: var(--bg); border-radius: 999px; gap: 4px;
+    margin: 0 auto clamp(28px, 4vw, 48px);
+  }
+  .tt-tabs button{
+    border: none; background: transparent;
+    padding: 10px 22px; border-radius: 999px;
+    font-size: 14px; font-weight: 600; color: var(--ink-2);
+    cursor: pointer; transition: background .2s, color .2s;
+  }
+  .tt-tabs button.on{ background: var(--ink); color: #fff; }
   .timetable-grid{
     max-width: var(--maxw); margin: 0 auto;
     background: #FAF6EE; border-radius: var(--radius);
@@ -1375,13 +1387,18 @@
     <p>Du DJ découverte sous le soleil à la tête d'affiche jusqu'à 2h, choisis ta trajectoire.</p>
   </div>
 
-  <div class="timetable-grid reveal">
+  <div class="tt-tabs" id="ttTabs">
+    <button class="on" data-tt="fri">Vendredi 08</button>
+    <button data-tt="sat">Samedi 09</button>
+  </div>
+
+  <!-- VENDREDI -->
+  <div class="timetable-grid reveal" data-tt-content="fri">
     <div class="row header">
       <div>Heure</div>
       <div>Main Stage</div>
       <div>Scène Hippie</div>
     </div>
-
     <div class="row">
       <div class="col-time">16:00</div>
       <div class="slot col-stage" data-stage="Main Stage"><div class="name">DJ MOKKA</div><div class="meta">Opening · house warm</div></div>
@@ -1403,9 +1420,48 @@
       <div class="slot col-stage" data-stage="Scène Hippie"><div class="name">DJ VKNGØ</div><div class="meta">Tech-house</div></div>
     </div>
     <div class="row">
-      <div class="col-time">23:30</div>
+      <div class="col-time">00:00</div>
+      <div class="slot col-stage" data-stage="Main Stage"><div class="name">ITSADDAY</div><div class="meta">B2B set</div></div>
+      <div class="slot col-stage" data-stage="Scène Hippie"><div class="name">SYLVAIN SC SAX</div><div class="meta">Live sax session</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">02:00</div>
+      <div class="slot col-stage" data-stage="Main Stage"><div class="name">DJ MOKKA</div><div class="meta">Closing set</div></div>
+      <div class="slot col-stage empty" data-stage="Scène Hippie"></div>
+    </div>
+  </div>
+
+  <!-- SAMEDI -->
+  <div class="timetable-grid reveal" data-tt-content="sat" hidden>
+    <div class="row header">
+      <div>Heure</div>
+      <div>Main Stage</div>
+      <div>Scène Hippie</div>
+    </div>
+    <div class="row">
+      <div class="col-time">16:00</div>
+      <div class="slot col-stage" data-stage="Main Stage"><div class="name">THE FRENCHIT</div><div class="meta">Opening vinyl</div></div>
+      <div class="slot col-stage" data-stage="Scène Hippie"><div class="name">DJ AWKD</div><div class="meta">Warm-up edits</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">18:00</div>
+      <div class="slot col-stage" data-stage="Main Stage"><div class="name">DJ VKNGØ</div><div class="meta">Tech-house</div></div>
+      <div class="slot col-stage" data-stage="Scène Hippie"><div class="name">VICKKY</div><div class="meta">Sunset session</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">20:00</div>
+      <div class="slot col-stage" data-stage="Main Stage"><div class="name">MONTAIGNE</div><div class="meta">Deep house</div></div>
+      <div class="slot col-stage" data-stage="Scène Hippie"><div class="name">SYLVAIN SC SAX</div><div class="meta">Live sax · house</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">22:00</div>
       <div class="slot col-stage headliner" data-stage="Main Stage"><div class="name">BLOCK &amp; CROWN</div><div class="meta">Headliner · 120 min</div></div>
-      <div class="slot col-stage" data-stage="Scène Hippie"><div class="name">MONTAIGNE</div><div class="meta">After-hours · vinyl</div></div>
+      <div class="slot col-stage" data-stage="Scène Hippie"><div class="name">ITSADDAY</div><div class="meta">B2B set</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">00:00</div>
+      <div class="slot col-stage" data-stage="Main Stage"><div class="name">HANNA HAÏS</div><div class="meta">After-hours</div></div>
+      <div class="slot col-stage" data-stage="Scène Hippie"><div class="name">DJ MOKKA</div><div class="meta">Late night grooves</div></div>
     </div>
     <div class="row">
       <div class="col-time">02:00</div>
@@ -1799,6 +1855,18 @@
 </footer>
 
 <script>
+  // Timetable day tabs
+  const ttBtns = document.querySelectorAll('#ttTabs button');
+  const ttGrids = document.querySelectorAll('[data-tt-content]');
+  ttBtns.forEach(b => b.addEventListener('click', () => {
+    ttBtns.forEach(o => o.classList.remove('on'));
+    b.classList.add('on');
+    const day = b.dataset.tt;
+    ttGrids.forEach(g => {
+      g.hidden = g.dataset.ttContent !== day;
+    });
+  }));
+
   // Burger menu
   const burgerBtn = document.getElementById('burgerToggle');
   const burgerOverlay = document.getElementById('burgerOverlay');
