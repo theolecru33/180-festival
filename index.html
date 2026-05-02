@@ -1,0 +1,1731 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>180 Festival — La Teste de Buch · 08 & 09 Août 2025</title>
+<meta name="description" content="Le 180 Festival : deux jours de musique, marché créateurs et bonnes vibes au cœur du Bassin d'Arcachon. 08 & 09 août 2025, 180 av Denis Papin, La Teste de Buch." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* -------- Reset & tokens -------- */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  img, video { max-width: 100%; display: block; }
+  button { font: inherit; cursor: pointer; }
+  a { color: inherit; }
+
+  :root{
+    --bg: #F2ECE2;
+    --bg-2: #EAE2D4;
+    --ink: #15110D;
+    --ink-2: #2A201A;
+    --muted: #8A7E6E;
+    --line: rgba(21,17,13,.08);
+    --line-2: rgba(21,17,13,.14);
+    --accent: #E83812;
+    --accent-2: #FF6A2A;
+    --accent-soft: #FFE0CF;
+    --green: #16A34A;
+    --radius: 22px;
+    --maxw: 1180px;
+    --pad: clamp(20px, 4vw, 48px);
+    --shadow: 0 30px 80px -30px rgba(21,17,13,.25), 0 8px 28px -10px rgba(21,17,13,.12);
+  }
+
+  body{
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+
+  /* -------- Type -------- */
+  .display{
+    font-family: 'Anton', 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 0.92;
+    text-transform: uppercase;
+  }
+  .script{ font-family: 'Caveat', cursive; font-weight: 700; }
+  .eyebrow{
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px; border-radius: 999px;
+    background: rgba(21,17,13,.06); color: var(--ink-2);
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* -------- Floating pill nav -------- */
+  .nav-wrap{
+    position: fixed; top: 16px; left: 0; right: 0;
+    z-index: 50;
+    display: flex; justify-content: center;
+    pointer-events: none;
+  }
+  .nav{
+    pointer-events: auto;
+    display: flex; align-items: center; gap: 4px;
+    padding: 8px 8px 8px 18px;
+    background: rgba(21,17,13,.95);
+    backdrop-filter: blur(20px) saturate(140%);
+    color: #F8F2E8;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 20px 60px -20px rgba(0,0,0,.5);
+  }
+  .nav .brand{
+    display: flex; align-items: center; gap: 10px;
+    padding-right: 14px;
+    border-right: 1px solid rgba(255,255,255,.12);
+    margin-right: 4px;
+  }
+  .nav .brand .dot{
+    width: 26px; height: 26px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: grid; place-items: center;
+    color: #fff; font-family: 'Anton'; font-size: 12px; line-height: 1;
+  }
+  .nav .brand strong{ font-weight: 700; font-size: 14px; letter-spacing: .03em; }
+  .nav a.link{
+    padding: 8px 14px; border-radius: 999px;
+    font-size: 13.5px; font-weight: 500; color: #E8DECF;
+    text-decoration: none; transition: background .2s, color .2s;
+  }
+  .nav a.link:hover{ background: rgba(255,255,255,.08); color: #fff; }
+  .nav .login{ color: #C9BFB0; padding: 8px 14px; font-size: 13.5px; }
+  .nav .cta{
+    padding: 8px 16px; border-radius: 999px;
+    background: linear-gradient(135deg, #FF8252, var(--accent));
+    color: #fff; font-weight: 600; font-size: 13.5px;
+    border: none; text-decoration: none;
+    box-shadow: 0 6px 20px -6px rgba(232,56,18,.6);
+    transition: transform .2s;
+  }
+  .nav .cta:hover{ transform: translateY(-1px); }
+  @media (max-width: 760px){
+    .nav .link, .nav .login{ display: none; }
+    .nav{ padding: 6px 6px 6px 14px; }
+  }
+
+  /* -------- Hero -------- */
+  .hero{
+    position: relative;
+    min-height: 100vh;
+    padding: 140px var(--pad) 80px;
+    display: flex; flex-direction: column; justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: var(--bg);
+    isolation: isolate;
+  }
+  .hero-bg{
+    position: absolute; inset: 0; z-index: -2;
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(1.05);
+  }
+  .hero::before{
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(180deg,
+        rgba(242,236,226,.94) 0%,
+        rgba(242,236,226,.72) 22%,
+        rgba(242,236,226,.55) 45%,
+        rgba(242,236,226,.78) 75%,
+        rgba(242,236,226,.96) 100%),
+      radial-gradient(120% 70% at 50% 100%, rgba(232,56,18,.22), transparent 60%);
+    pointer-events: none;
+  }
+  .hero::after{
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: radial-gradient(80% 60% at 50% 0%, rgba(255,255,255,.45), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-bg-tag{
+    position: absolute; top: 84px; right: var(--pad); z-index: 3;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 14px; border-radius: 999px;
+    background: rgba(21,17,13,.7);
+    backdrop-filter: blur(12px) saturate(140%);
+    color: #F8F2E8;
+    font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  }
+  .hero-bg-tag .dot{
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(232,56,18,.25);
+  }
+  @media (max-width: 760px){
+    .hero-bg-tag{ top: 78px; right: 16px; font-size: 10.5px; padding: 5px 11px; }
+  }
+  .hero-inner{ position: relative; z-index: 2; max-width: 980px; margin: 0 auto; }
+  .hero h1{
+    font-size: clamp(64px, 11vw, 168px);
+    margin: 18px 0 6px;
+    color: var(--ink);
+  }
+  .hero h1 .stroke{
+    -webkit-text-stroke: 2px var(--ink);
+    color: transparent;
+  }
+  .hero h1 .red{ color: var(--accent); }
+  .hero .sub{
+    font-size: clamp(16px, 1.6vw, 19px);
+    max-width: 560px; margin: 22px auto 0;
+    color: var(--ink-2);
+  }
+  .hero .ctas{
+    margin-top: 34px;
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  }
+  .btn{
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 14.5px; text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform .2s, box-shadow .2s, background .2s;
+  }
+  .btn-primary{
+    background: linear-gradient(135deg, #FF8252, var(--accent));
+    color: #fff;
+    box-shadow: 0 14px 34px -10px rgba(232,56,18,.55);
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 18px 40px -8px rgba(232,56,18,.65); }
+  .btn-ghost{
+    background: rgba(21,17,13,.06);
+    color: var(--ink);
+  }
+  .btn-ghost:hover{ background: rgba(21,17,13,.1); }
+  .hero .meta{
+    margin-top: 28px;
+    display: inline-flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+    font-size: 13.5px; color: var(--muted);
+  }
+  .hero .meta b{ color: var(--ink); font-weight: 600; }
+  @media (max-width: 760px){
+    .hero .meta{ gap: 6px 14px; font-size: 13px; }
+    /* Hide bullet-only separator spans on mobile (they look stranded when wrapped) */
+    .hero .meta > span:nth-child(2),
+    .hero .meta > span:nth-child(4){ display: none; }
+  }
+  .hero .plus{ position: absolute; color: var(--ink-2); font-family: 'Anton'; font-size: 26px; opacity: .4; }
+  .hero .plus.tl{ top: 100px; left: 8%; }
+  .hero .plus.tr{ top: 130px; right: 10%; }
+  .hero .plus.bl{ bottom: 80px; left: 12%; }
+
+  .hero-chips{
+    position: relative; z-index: 2;
+    margin: clamp(40px, 5.5vw, 64px) auto 0;
+    max-width: 1080px;
+    display: flex; flex-wrap: wrap; gap: 14px;
+    justify-content: center; align-items: center;
+  }
+  /*
+    Title-safe zones: title's max-width is 980px (from .hero-inner), centered.
+    Chips are anchored at calc(50% + 510px) — that's h1 half-width (490) + 20px gap.
+    Result: chips never enter the title column at any viewport width.
+    Below 1440px the gutters are too narrow → fall back to flex-wrap.
+  */
+  @media (min-width: 1440px){
+    .hero-chips{
+      position: absolute; inset: 0;
+      margin: 0; max-width: none;
+      display: block;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .chip{
+      position: absolute; pointer-events: auto;
+      padding: 12px 18px;
+    }
+    .chip .sub{ display: none; }
+    .chip .big{ font-size: 32px; }
+    .chip-num    { top: 88px;     right: calc(50% + 510px); }
+    .chip-feat   { top: 116px;    left:  calc(50% + 510px); }
+    .chip-time   { bottom: 116px; right: calc(50% + 510px); }
+    .chip-stages { bottom: 84px;  left:  calc(50% + 510px); }
+  }
+  @media (min-width: 1700px){
+    .chip-num    { top: 96px;     right: calc(50% + 520px); }
+    .chip-feat   { top: 124px;    left:  calc(50% + 520px); }
+    .chip-time   { bottom: 124px; right: calc(50% + 520px); }
+    .chip-stages { bottom: 92px;  left:  calc(50% + 520px); }
+  }
+  @media (min-width: 2000px){
+    .chip-num    { top: 100px;    right: calc(50% + 540px); }
+    .chip-feat   { top: 132px;    left:  calc(50% + 540px); }
+    .chip-time   { bottom: 132px; right: calc(50% + 540px); }
+    .chip-stages { bottom: 96px;  left:  calc(50% + 540px); }
+  }
+  .chip{
+    background: #FAF6EE;
+    border: 1px solid rgba(21,17,13,.12);
+    border-radius: 16px;
+    padding: 14px 22px;
+    display: inline-flex; align-items: baseline; gap: 9px;
+    box-shadow: 0 18px 38px -18px rgba(21,17,13,.35), 0 4px 10px -4px rgba(21,17,13,.12);
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+    line-height: 1;
+    font-family: 'Anton', sans-serif;
+    cursor: default;
+  }
+  .chip:nth-child(1){ transform: rotate(-2.2deg); }
+  .chip:nth-child(2){ transform: rotate(1.6deg); }
+  .chip:nth-child(3){ transform: rotate(-1.2deg); }
+  .chip:nth-child(4){ transform: rotate(2deg); }
+  .chip:hover{
+    transform: rotate(0deg) translateY(-3px);
+    box-shadow: 0 24px 48px -16px rgba(21,17,13,.4), 0 6px 14px -4px rgba(21,17,13,.18);
+  }
+  .chip .big{
+    font-family: 'Anton'; font-size: clamp(34px, 3.6vw, 44px);
+    color: var(--ink); letter-spacing: -.01em;
+  }
+  .chip .big sup{
+    font-size: .55em; vertical-align: super; margin-left: 1px;
+  }
+  .chip .word{
+    font-family: 'Inter'; font-weight: 600; font-size: 14px;
+    color: var(--ink); letter-spacing: .01em;
+  }
+  .chip .sub{
+    font-family: 'Inter'; font-weight: 500; font-size: 10.5px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: .08em;
+    margin-left: 4px;
+    transform: translateY(-2px);
+  }
+
+  .chip-feat{
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .chip-feat .big{ color: #fff; }
+  .chip-feat .word{ color: #fff; }
+
+  .chip-time .arrow{
+    font-family: 'Anton'; font-size: clamp(28px, 3vw, 36px);
+    color: var(--accent); margin: 0 2px;
+  }
+
+  .chip-stages .dots{
+    display: inline-flex; gap: 4px; margin-right: 6px;
+    transform: translateY(-2px);
+  }
+  .chip-stages .dots i{
+    display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(232,56,18,.18);
+  }
+  .chip-stages .dots i:nth-child(2){
+    background: #5436D6;
+    box-shadow: 0 0 0 3px rgba(84,54,214,.18);
+  }
+
+  @media (max-width: 760px){
+    .hero-chips{ gap: 10px; margin-top: 32px; }
+    .chip{ padding: 11px 16px; }
+    .chip .big{ font-size: 28px; }
+    .chip .word{ font-size: 13px; }
+    .chip .sub{ display: none; }
+    /* Reduce rotation on mobile to prevent rotated corners from kissing */
+    .chip:nth-child(1){ transform: rotate(-1deg); }
+    .chip:nth-child(2){ transform: rotate(0.8deg); }
+    .chip:nth-child(3){ transform: rotate(-0.6deg); }
+    .chip:nth-child(4){ transform: rotate(1deg); }
+  }
+
+  /* Partner strip */
+  .partners{
+    padding: 50px var(--pad) 30px;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+  }
+  .partners .row{
+    max-width: var(--maxw); margin: 0 auto;
+    display: flex; gap: clamp(28px, 5vw, 64px);
+    align-items: center; justify-content: center;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-weight: 600; font-size: 14px; letter-spacing: 0.02em;
+  }
+  .partners .p-item{
+    display: inline-flex; align-items: center; gap: 8px;
+    opacity: .55; transition: opacity .2s;
+  }
+  .partners .p-item:hover{ opacity: 1; }
+  .partners .p-icon{
+    width: 22px; height: 22px; border-radius: 6px;
+    background: var(--ink); display: grid; place-items: center;
+    color: #fff; font-size: 11px; font-weight: 700;
+  }
+
+  /* -------- Sections -------- */
+  section{ padding: clamp(60px, 9vw, 110px) var(--pad); position: relative; }
+  .section-head{ text-align: center; max-width: 720px; margin: 0 auto 56px; }
+  .section-head h2{
+    font-size: clamp(40px, 5.5vw, 64px);
+    margin: 16px 0 14px;
+    line-height: 1.05; letter-spacing: -0.02em;
+    font-family: 'Inter'; font-weight: 700;
+  }
+  .section-head p{ color: var(--muted); font-size: 17px; }
+
+  /* Showcase tabs (like visitors.now dashboard) */
+  .showcase-wrap{ background: var(--bg); padding-top: 0; }
+  .showcase{
+    position: relative;
+    background: linear-gradient(180deg, #C8B6FF 0%, #9B8AFF 35%, #7C6CE6 70%, #6450C9 100%);
+    margin: 0 calc(-1 * var(--pad));
+    padding: 90px var(--pad) 110px;
+    overflow: hidden;
+  }
+  .showcase::before{
+    content: ""; position: absolute; inset: -10% -5%;
+    background:
+      radial-gradient(40% 50% at 20% 30%, rgba(255,255,255,.4), transparent 60%),
+      radial-gradient(50% 50% at 80% 70%, rgba(255,210,180,.35), transparent 60%),
+      radial-gradient(40% 60% at 50% 100%, rgba(146,116,255,.6), transparent 60%);
+    filter: blur(40px);
+    pointer-events: none;
+  }
+  .showcase-tabs{
+    display: inline-flex; padding: 6px;
+    background: rgba(255,255,255,.95);
+    border-radius: 999px;
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,.15);
+    position: relative; z-index: 2;
+    margin: 0 auto 38px; left: 50%; transform: translateX(-50%);
+  }
+  .showcase-tabs button{
+    border: none; background: transparent;
+    padding: 10px 20px; border-radius: 999px;
+    font-weight: 600; font-size: 14px; color: var(--ink-2);
+    transition: background .2s, color .2s;
+  }
+  .showcase-tabs button.on{ background: var(--ink); color: #fff; }
+  .showcase-card{
+    position: relative; z-index: 2;
+    max-width: 1080px; margin: 0 auto;
+    background: #FAF6EE;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 26px 28px;
+    border: 1px solid rgba(0,0,0,.05);
+  }
+  .showcase-card .top{
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 18px;
+  }
+  .showcase-card .top .left{ display: flex; align-items: center; gap: 12px; }
+  .sc-logo{
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--ink); display: grid; place-items: center; color: #fff;
+    font-family: 'Anton'; font-size: 12px;
+  }
+  .sc-pill{
+    padding: 6px 12px; background: rgba(0,0,0,.05); border-radius: 999px;
+    font-size: 13px; font-weight: 500;
+  }
+  .sc-avatar{ width: 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+
+  .stats{ display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-bottom: 28px; }
+  .stats .stat{ }
+  .stats .label{ font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 5px; font-weight: 500; }
+  .stats .label .dot{ width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .stats .label .dot.green{ background: var(--green); }
+  .stats .val{ font-size: clamp(15px, 1.4vw, 18px); font-weight: 600; margin: 4px 0 2px; }
+  .stats .delta{ font-size: 11.5px; font-weight: 600; color: var(--accent); }
+  .stats .delta.green{ color: var(--green); }
+  @media (max-width: 740px){ .stats{ grid-template-columns: repeat(3, 1fr); } }
+
+  .chart{
+    position: relative; height: 260px; border-radius: 12px;
+    background: linear-gradient(180deg, transparent 0%, rgba(232,56,18,.04) 100%);
+    margin-bottom: 20px;
+  }
+  .chart svg{ width: 100%; height: 100%; }
+
+  .mini-cards{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 720px){ .mini-cards{ grid-template-columns: 1fr; } }
+  .mini-card{
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px;
+  }
+  .mini-card .h{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 13.5px; font-weight: 600; }
+  .mini-card .badge{ padding: 3px 9px; background: rgba(0,0,0,.05); border-radius: 999px; font-size: 11px; font-weight: 500; color: var(--muted); }
+  .mini-card .badge.live{ color: var(--accent); background: rgba(232,56,18,.1); }
+  .bars{ display: flex; align-items: flex-end; gap: 4px; height: 60px; }
+  .bars span{ flex: 1; background: linear-gradient(180deg, var(--accent-2), var(--accent)); border-radius: 3px; opacity: .7; }
+  .ring{
+    width: 56px; height: 56px; border-radius: 50%;
+    background: conic-gradient(var(--green) 0 100%, #eee 0 100%);
+    display: grid; place-items: center;
+    position: relative;
+  }
+  .ring::before{ content: ""; position: absolute; inset: 5px; background: #fff; border-radius: 50%; }
+  .ring span{ position: relative; font-weight: 700; font-size: 14px; }
+
+  /* -------- Features dual card -------- */
+  .features-grid{
+    display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+    max-width: var(--maxw); margin: 0 auto;
+  }
+  @media (max-width: 860px){ .features-grid{ grid-template-columns: 1fr; } }
+  .feature{
+    background: var(--bg-2);
+    border-radius: var(--radius);
+    padding: 36px 32px 0;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .feature .icon{
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,.7); display: grid; place-items: center;
+    margin-bottom: 22px;
+    color: var(--accent);
+  }
+  .feature.alt .icon{ color: #5436D6; }
+  .feature h3{ font-size: 28px; margin: 0 0 14px; line-height: 1.15; font-weight: 700; }
+  .feature h3 .green{ color: var(--green); display: block; }
+  .feature h3 .purple{ color: #5436D6; display: block; }
+  .feature p{ color: var(--ink-2); font-size: 16px; max-width: 36ch; }
+  .feature ul{ list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 8px; font-size: 14.5px; }
+  .feature ul li{ display: flex; align-items: center; gap: 10px; }
+  .feature ul li .check{
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--green); color: #fff;
+    display: grid; place-items: center; font-size: 10px;
+  }
+  .feature .learn{
+    margin-top: 22px;
+    align-self: flex-start;
+    padding: 8px 16px;
+    background: #fff; border-radius: 999px;
+    font-size: 13px; font-weight: 600; text-decoration: none;
+    color: var(--ink); border: 1px solid var(--line);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .feature .visual{
+    margin: 28px -32px 0;
+    padding: 22px 24px 24px;
+    background: #fff;
+    border-top: 1px solid var(--line);
+  }
+
+  /* lineup list visual */
+  .lineup-row{
+    display: grid; grid-template-columns: 24px 1fr 60px 80px;
+    align-items: center; gap: 10px;
+    padding: 8px 12px; border-radius: 8px;
+    background: rgba(22,163,74,.05);
+    margin-bottom: 6px;
+    font-size: 13.5px;
+  }
+  .lineup-row .ic{ width: 18px; height: 18px; border-radius: 4px; background: var(--ink); display: grid; place-items: center; color: #fff; font-size: 9px; font-weight: 800; }
+  .lineup-row .name{ font-weight: 600; }
+  .lineup-row .time{ color: var(--muted); font-size: 12.5px; text-align: right; }
+  .lineup-row .stat{ text-align: right; font-weight: 600; }
+  .lineup-row .bar{ height: 8px; background: rgba(22,163,74,.2); border-radius: 99px; overflow: hidden; }
+  .lineup-row .bar i{ display: block; height: 100%; background: var(--green); border-radius: 99px; }
+
+  /* map visual */
+  .map-frame{ position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 16/10; background: linear-gradient(135deg, #BDDFFF, #6FB3FF); }
+  .map-frame img{ width: 100%; height: 100%; object-fit: cover; }
+  .map-pin{
+    position: absolute;
+    display: flex; align-items: center; gap: 6px;
+    padding: 4px 8px 4px 4px;
+    background: #fff; border-radius: 999px;
+    font-size: 11px; font-weight: 700;
+    box-shadow: 0 6px 16px -4px rgba(0,0,0,.25);
+  }
+  .map-pin .b{ width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 10px; font-weight: 700; background: linear-gradient(135deg, #FF8252, var(--accent)); }
+  .map-globe{
+    position: absolute; bottom: 14px; right: 14px;
+    background: #15110D; color: #fff; font-size: 12px;
+    padding: 6px 12px 6px 6px; border-radius: 999px;
+    display: flex; align-items: center; gap: 8px; font-weight: 700;
+  }
+  .map-globe .g{ width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, #BDDFFF, var(--accent-2)); }
+
+  /* -------- How it works -------- */
+  .how{ background: var(--bg); }
+  .steps{
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    max-width: var(--maxw); margin: 0 auto;
+  }
+  @media (max-width: 860px){ .steps{ grid-template-columns: 1fr; } }
+  .step{
+    background: var(--bg-2); border-radius: var(--radius);
+    padding: 28px;
+    display: flex; flex-direction: column;
+    min-height: 360px;
+    overflow: hidden; position: relative;
+  }
+  .step .visual{
+    flex: 1; min-height: 180px;
+    display: grid; place-items: center;
+    background: rgba(255,255,255,.5);
+    border-radius: 16px;
+    margin-bottom: 22px;
+    overflow: hidden;
+    position: relative;
+  }
+  .step .visual img{ width: 100%; height: 100%; object-fit: cover; }
+  .step .num{
+    width: 34px; height: 34px; border-radius: 50%;
+    background: #fff; border: 1px solid var(--line);
+    display: grid; place-items: center;
+    font-weight: 700; font-size: 14px; color: var(--accent);
+    margin: 0 auto 12px;
+  }
+  .step h3{ text-align: center; font-size: 19px; margin: 0 0 8px; font-weight: 700; }
+  .step p{ text-align: center; font-size: 14.5px; color: var(--muted); margin: 0; }
+  .step b{ color: var(--ink); font-weight: 600; }
+
+  /* -------- Pricing / Tickets -------- */
+  .tickets{ background: var(--bg); }
+  .tickets-grid{
+    display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+    max-width: var(--maxw); margin: 0 auto;
+  }
+  @media (max-width: 860px){ .tickets-grid{ grid-template-columns: 1fr; } }
+  .ticket-card, .info-card{
+    background: var(--bg-2);
+    border-radius: var(--radius);
+    padding: 36px;
+  }
+  .ticket-card .h{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+  .ticket-card .h h4{ margin: 0; font-size: 17px; font-weight: 700; }
+  .ticket-card .h p{ margin: 4px 0 0; font-size: 13.5px; color: var(--muted); max-width: 32ch; }
+  .toggle{
+    background: #fff; border-radius: 999px; padding: 4px;
+    display: inline-flex; align-items: center;
+    border: 1px solid var(--line);
+  }
+  .toggle button{ border: none; background: transparent; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted); }
+  .toggle button.on{ background: var(--ink); color: #fff; }
+  .toggle .save{ font-size: 11px; padding: 4px 8px; background: var(--accent); color: #fff; border-radius: 999px; margin-left: 6px; font-weight: 700; }
+  .price-row{ display: flex; align-items: flex-end; gap: 14px; margin: 18px 0 14px; }
+  .price{
+    font-family: 'Anton'; font-size: clamp(72px, 10vw, 110px);
+    color: var(--accent); line-height: 0.85; letter-spacing: -.02em;
+  }
+  .price .for{ font-family: 'Inter'; font-size: 18px; font-weight: 600; color: var(--muted); display: inline-block; vertical-align: top; margin-left: 8px; }
+  .price .price-sm{ color: var(--ink); }
+  .price-meta{ font-size: 14px; color: var(--muted); }
+  .slider{ height: 8px; border-radius: 99px; background: rgba(0,0,0,.06); position: relative; margin: 22px 0 28px; }
+  .slider .track{ position: absolute; left: 0; top: 0; bottom: 0; width: 25%; background: linear-gradient(90deg, var(--accent-2), var(--accent)); border-radius: 99px; }
+  .slider .knob{ position: absolute; left: 25%; top: 50%; width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, #FF8252, var(--accent)); transform: translate(-50%, -50%); border: 3px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,.2); }
+  .slider .marks{ position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; }
+  .slider .marks span{ width: 4px; height: 4px; border-radius: 50%; background: rgba(0,0,0,.2); }
+  .ticket-feats{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; font-size: 14px; }
+  .ticket-feats div{ display: flex; align-items: center; gap: 8px; }
+  .ticket-feats .ic{ color: var(--accent); }
+
+  .ticket-stamps{
+    display: grid; gap: 10px;
+    margin: 26px 0 26px;
+    padding: 16px 0;
+    border-top: 1px dashed rgba(21,17,13,.16);
+    border-bottom: 1px dashed rgba(21,17,13,.16);
+  }
+  .stamp-row{
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13.5px; gap: 12px;
+  }
+  .stamp-row .stamp-key{
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 700; font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase; letter-spacing: .06em;
+  }
+  .stamp-row .stamp-key::before{
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
+  .stamp-row .stamp-val{
+    color: var(--ink); font-weight: 500;
+    text-align: right;
+  }
+
+  .info-card .map-frame{ aspect-ratio: 4/5; }
+  .info-card .small{ font-size: 13px; color: var(--muted); }
+  .info-card h4{ font-size: 17px; font-weight: 700; margin: 0 0 8px; }
+  .info-card .live-count{
+    text-align: center; font-family: 'Anton'; font-size: 88px; line-height: 1;
+    color: var(--ink); margin: 18px 0 6px;
+  }
+  .info-card .live-count + p{ text-align: center; color: var(--muted); margin: 0 0 18px; }
+
+  /* -------- Gallery -------- */
+  .gallery{ background: var(--bg); padding-bottom: 30px; overflow: hidden; }
+  .gallery .strip{
+    display: flex; gap: 16px;
+    overflow-x: auto;
+    padding: 0 var(--pad) 30px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gallery .strip::-webkit-scrollbar{ display: none; }
+  .gallery .strip{ scrollbar-width: none; }
+  .gallery .card{
+    flex: 0 0 clamp(260px, 32vw, 400px);
+    aspect-ratio: 4/5;
+    border-radius: 18px; overflow: hidden;
+    scroll-snap-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px -25px rgba(0,0,0,.3);
+  }
+  .gallery .card img{ width: 100%; height: 100%; object-fit: cover; }
+  .gallery .card .lab{
+    position: absolute; bottom: 14px; left: 14px;
+    background: rgba(255,255,255,.95); color: var(--ink);
+    padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 600;
+  }
+
+  /* -------- FAQ -------- */
+  .faq-wrap{ max-width: 740px; margin: 0 auto; }
+  details{
+    background: var(--bg-2);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    transition: border-color .2s;
+  }
+  details[open]{ border-color: var(--line-2); }
+  summary{
+    list-style: none;
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: 600; font-size: 16px;
+  }
+  summary::-webkit-details-marker{ display: none; }
+  summary::after{
+    content: ""; width: 10px; height: 10px;
+    border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+    transform: rotate(45deg);
+    transition: transform .2s;
+  }
+  details[open] summary::after{ transform: rotate(225deg); }
+  details p{ margin: 12px 0 0; color: var(--ink-2); font-size: 15px; }
+
+  /* -------- CTA strip -------- */
+  .cta-strip{
+    background: var(--ink);
+    color: #F8F2E8;
+    padding: clamp(60px, 9vw, 110px) var(--pad);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-strip::after{
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(60% 60% at 50% 30%, rgba(232,56,18,.35), transparent 70%);
+    pointer-events: none;
+  }
+  .cta-strip h2{
+    font-family: 'Anton'; font-size: clamp(56px, 11vw, 160px);
+    margin: 0 0 14px; line-height: .9; letter-spacing: -.01em;
+    position: relative; z-index: 2;
+  }
+  .cta-strip h2 .red{ color: var(--accent); }
+  .cta-strip p{ position: relative; z-index: 2; max-width: 540px; margin: 0 auto 28px; color: #C8BDA8; font-size: 17px; }
+  .cta-strip .btn-primary{ position: relative; z-index: 2; }
+
+  /* -------- Footer -------- */
+  footer{
+    padding: 48px var(--pad);
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+  }
+  footer .inner{
+    max-width: var(--maxw); margin: 0 auto;
+    display: flex; flex-wrap: wrap; gap: 16px;
+    justify-content: space-between; align-items: center;
+    color: var(--muted); font-size: 13.5px;
+  }
+  footer .brand-f{ display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; }
+  footer .brand-f .dot{ width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: grid; place-items: center; color: #fff; font-family: 'Anton'; font-size: 12px; }
+  footer ul{ list-style: none; padding: 0; margin: 0; display: flex; gap: 22px; flex-wrap: wrap; }
+  footer ul a{ text-decoration: none; }
+  footer ul a:hover{ color: var(--ink); }
+
+  /* -------- Reveal -------- */
+  .reveal{ opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in{ opacity: 1; transform: none; }
+
+  /* -------- Marquee -------- */
+  .marquee{
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+  }
+  .marquee .track{
+    display: flex; gap: 36px;
+    animation: scroll 38s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+  .marquee span{
+    font-family: 'Anton'; font-size: 28px; letter-spacing: 0.04em;
+    display: inline-flex; align-items: center; gap: 36px;
+  }
+  .marquee em{ font-family: 'Caveat'; font-style: normal; font-weight: 700; color: #FFE0CF; }
+  @keyframes scroll{
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ==================== DRONE / IMMERSIVE ==================== */
+  .immersive{
+    position: relative;
+    margin: 0 calc(-1 * var(--pad));
+    padding: clamp(80px, 14vw, 180px) var(--pad);
+    color: #F8F2E8;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .immersive video, .immersive .bg-img{
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: -2;
+  }
+  .immersive::before{
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(21,17,13,.3) 0%, rgba(21,17,13,.65) 100%),
+      radial-gradient(70% 60% at 50% 100%, rgba(232,56,18,.45), transparent 70%);
+  }
+  .immersive .label{
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border-radius: 999px;
+    background: rgba(255,255,255,.15);
+    backdrop-filter: blur(10px);
+    font-size: 12px; font-weight: 600; letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  .immersive .label .dot{
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(232,56,18,.25);
+  }
+  .immersive h2{
+    font-family: 'Anton';
+    font-size: clamp(56px, 10vw, 156px);
+    line-height: .9; letter-spacing: -.01em;
+    margin: 22px 0 18px; max-width: 14ch;
+  }
+  .immersive h2 .red{ color: var(--accent-2); }
+  .immersive .lead{
+    max-width: 540px; font-size: 17px; line-height: 1.6;
+    color: rgba(248,242,232,.85);
+  }
+  .stats-row{
+    margin-top: clamp(48px, 7vw, 96px);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,.18);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  @media (max-width: 760px){ .stats-row{ grid-template-columns: repeat(2, 1fr); } }
+  .stats-row .stat-cell{
+    padding: 28px 20px;
+    border-right: 1px solid rgba(255,255,255,.18);
+  }
+  .stats-row .stat-cell:last-child{ border-right: none; }
+  @media (max-width: 760px){
+    .stats-row .stat-cell:nth-child(2){ border-right: none; }
+    .stats-row .stat-cell:nth-child(1), .stats-row .stat-cell:nth-child(2){
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
+  }
+  .stats-row .num{
+    font-family: 'Anton'; font-size: clamp(42px, 6vw, 76px);
+    line-height: 1; color: #fff;
+  }
+  .stats-row .num .accent{ color: var(--accent-2); }
+  .stats-row .lab{
+    margin-top: 10px; font-size: 13px;
+    color: rgba(248,242,232,.6); letter-spacing: .04em; text-transform: uppercase;
+  }
+
+  /* ==================== LINEUP POSTER ==================== */
+  .lineup-poster{
+    background: var(--bg);
+    padding: clamp(70px, 10vw, 130px) var(--pad);
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .lineup-poster .head{
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    margin-bottom: clamp(40px, 6vw, 80px);
+  }
+  .lineup-poster .day-tabs{
+    display: inline-flex; padding: 5px;
+    background: var(--bg-2); border-radius: 999px; gap: 4px;
+  }
+  .lineup-poster .day-tabs button{
+    border: none; background: transparent;
+    padding: 9px 18px; border-radius: 999px;
+    font-size: 13.5px; font-weight: 600; color: var(--ink-2);
+  }
+  .lineup-poster .day-tabs button.on{
+    background: var(--ink); color: #fff;
+  }
+  .lineup-poster .tier{
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+  .lineup-poster .tier-headline{
+    font-family: 'Anton';
+    font-size: clamp(54px, 11vw, 168px);
+    line-height: .9; letter-spacing: -.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .lineup-poster .tier-headline .red{ color: var(--accent); }
+  .lineup-poster .tier-mid{
+    font-family: 'Anton';
+    font-size: clamp(28px, 4.5vw, 60px);
+    line-height: 1;
+    margin: 22px 0;
+    display: flex; flex-wrap: wrap; gap: 0 28px; justify-content: center;
+    align-items: baseline;
+  }
+  .lineup-poster .tier-mid span{ position: relative; }
+  .lineup-poster .tier-mid span:not(:last-child)::after{
+    content: "·"; color: var(--accent); margin-left: 28px;
+  }
+  .lineup-poster .tier-low{
+    margin: 24px 0 0;
+    font-size: clamp(15px, 1.4vw, 18px);
+    font-weight: 600; letter-spacing: .04em;
+    color: var(--ink-2);
+    display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center;
+  }
+  .lineup-poster .tier-low span::after{ content: "·"; color: var(--accent); margin-left: 18px; }
+  .lineup-poster .tier-low span:last-child::after{ display: none; }
+  .lineup-poster .stamp{
+    margin-top: 50px;
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--muted); font-size: 13.5px;
+  }
+
+  /* ==================== TIMETABLE ==================== */
+  .timetable{ background: var(--bg-2); }
+  .timetable-grid{
+    max-width: var(--maxw); margin: 0 auto;
+    background: #FAF6EE; border-radius: var(--radius);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .timetable-grid .row{
+    display: grid; grid-template-columns: 110px 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (max-width: 760px){
+    .timetable-grid .row{ grid-template-columns: 56px 1fr 1fr; }
+    .timetable-grid .row > div{ padding: 12px 10px; min-height: 64px; }
+    .timetable-grid .col-time{ font-size: 17px; padding-left: 14px; }
+    .timetable-grid .slot .name{ font-size: 13px; }
+    .timetable-grid .slot .meta{ font-size: 11.5px; line-height: 1.3; }
+    .timetable-grid .slot.headliner .name{ font-size: 14.5px; }
+    .timetable-grid .row.header{ font-size: 9.5px; letter-spacing: .04em; }
+    .timetable-grid .row.header > div{ padding: 10px 8px; }
+  }
+  .timetable-grid .row:last-child{ border-bottom: none; }
+  .timetable-grid .row.header{
+    background: var(--ink); color: #F8F2E8;
+    font-size: 12px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700;
+  }
+  .timetable-grid .row.header > div{ padding: 16px 18px; border-right: 1px solid rgba(255,255,255,.1); }
+  .timetable-grid .row > div{
+    padding: 16px 18px;
+    border-right: 1px solid var(--line);
+    min-height: 76px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .timetable-grid .row > div:last-child{ border-right: none; }
+  .timetable-grid .col-time{
+    background: var(--bg);
+    font-family: 'Anton'; font-size: 22px;
+    color: var(--ink);
+  }
+  .timetable-grid .slot .name{ font-weight: 700; font-size: 15px; color: var(--ink); }
+  .timetable-grid .slot .meta{ font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+  .timetable-grid .slot.headliner{ background: rgba(232,56,18,.06); }
+  .timetable-grid .slot.headliner .name{ color: var(--accent); font-family: 'Anton'; font-size: 19px; letter-spacing: .02em; }
+  .timetable-grid .slot.empty{ color: var(--muted); font-size: 12px; opacity: .5; }
+  .timetable-grid .slot.empty::before{ content: "—"; }
+
+  /* ==================== PLAN / SITE ==================== */
+  .site-plan{ background: var(--bg); }
+  .plan-grid{
+    max-width: var(--maxw); margin: 0 auto;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px;
+    align-items: stretch;
+  }
+  @media (max-width: 860px){ .plan-grid{ grid-template-columns: 1fr; } }
+  .plan-img{
+    background: #FFEAD9;
+    border-radius: var(--radius);
+    padding: 24px;
+    display: grid; place-items: center;
+    border: 1px solid var(--line);
+  }
+  .plan-img img{ max-height: 540px; width: auto; max-width: 100%; }
+  .plan-svg{
+    width: 100%; max-width: 380px;
+    height: auto; display: block;
+  }
+  .plan-info{
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .zone{
+    background: var(--bg-2);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: grid; grid-template-columns: 44px 1fr auto; gap: 14px;
+    align-items: center;
+  }
+  .zone .ic{
+    width: 44px; height: 44px; border-radius: 12px;
+    background: #fff; display: grid; place-items: center;
+    color: var(--accent); font-weight: 700;
+    font-family: 'Anton'; font-size: 22px; letter-spacing: 0;
+    flex-shrink: 0;
+  }
+  .zone.alt .ic{ color: #5436D6; }
+  .zone .t{ font-weight: 700; font-size: 15px; }
+  .zone .d{ font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+  .zone .pill{ font-size: 11px; font-weight: 700; padding: 4px 10px; background: var(--ink); color: #fff; border-radius: 999px; letter-spacing: .04em; }
+
+  /* ==================== MASONRY GALLERY ==================== */
+  .gallery-2{
+    background: var(--bg);
+    padding: clamp(60px, 9vw, 110px) var(--pad);
+    overflow: hidden;
+  }
+  .masonry{
+    max-width: var(--maxw); margin: 0 auto;
+    columns: 3 280px;
+    column-gap: 16px;
+  }
+  .masonry .card{
+    break-inside: avoid;
+    margin: 0 0 16px;
+    border-radius: 14px; overflow: hidden;
+    position: relative;
+    box-shadow: 0 18px 40px -22px rgba(0,0,0,.3);
+    transition: transform .35s ease;
+  }
+  .masonry .card:hover{ transform: translateY(-3px); }
+  .masonry .card img{ width: 100%; height: auto; display: block; }
+  .masonry .card .lab{
+    position: absolute; bottom: 12px; left: 12px;
+    background: rgba(255,255,255,.95); color: var(--ink);
+    padding: 5px 11px; border-radius: 999px; font-size: 11.5px; font-weight: 600;
+  }
+
+  /* ==================== PRESS ==================== */
+  .press{ background: var(--bg-2); }
+  .press-grid{
+    max-width: var(--maxw); margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  @media (max-width: 860px){ .press-grid{ grid-template-columns: 1fr; } }
+  .quote{
+    background: #FAF6EE;
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    border: 1px solid var(--line);
+    display: flex; flex-direction: column;
+  }
+  .quote .mark{
+    font-family: 'Anton'; font-size: 56px; line-height: 1;
+    color: var(--accent); margin-bottom: 8px;
+  }
+  .quote p{
+    font-size: 17px; line-height: 1.45;
+    color: var(--ink); flex: 1;
+  }
+  .quote .who{
+    margin-top: 18px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: var(--muted);
+  }
+  .quote .who b{ color: var(--ink); font-weight: 700; }
+
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Principale">
+    <a href="#top" class="brand">
+      <span class="dot">180</span>
+      <strong>180 Festival</strong>
+    </a>
+    <a class="link" href="#programme">Programme</a>
+    <a class="link" href="#plan">Le site</a>
+    <a class="link" href="#tickets">Tickets</a>
+    <a class="link" href="#faq">FAQ</a>
+    <a class="login" href="#">Bénévole</a>
+    <a class="cta" href="#tickets">Réserver</a>
+  </nav>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top">
+  <video class="hero-bg" autoplay loop muted playsinline poster="Capture%20d%27%C3%A9cran%202026-05-01%20203931.png">
+    <source src="drone_hd_72dc1bf8c8.mp4" type="video/mp4">
+  </video>
+
+  <span class="plus tl">+</span>
+  <span class="plus tr">+</span>
+  <span class="plus bl">+</span>
+
+  <div class="hero-inner">
+    <h1 class="display">
+      Le festival<br/>
+      <span class="red">qui fait tourner</span><br/>
+      <span class="stroke">le bassin</span>
+    </h1>
+
+    <p class="sub">
+      Deux jours de musique, trente artistes, vingt stands créateurs et un coucher de soleil
+      sur le Bassin. Le seul festival électro d'Arcachon, vraiment.
+    </p>
+
+    <div class="ctas">
+      <a class="btn btn-primary" href="#tickets">
+        Réserver mon pass
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10m0 0L7.5 2.5M12 7l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#programme">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 2v10l9-5z" fill="currentColor"/></svg>
+        Voir le line-up
+      </a>
+    </div>
+
+    <div class="meta">
+      <span><b>180 av Denis Papin</b> · La Teste de Buch</span>
+      <span>·</span>
+      <span><b>20 stands</b> créateurs</span>
+      <span>·</span>
+      <span><b>16h → 2h</b> du soleil au sunrise</span>
+    </div>
+  </div>
+
+  <div class="hero-chips">
+    <div class="chip chip-num">
+      <span class="big">2</span>
+      <span class="word">jours</span>
+      <span class="sub">08 · 09 août</span>
+    </div>
+
+    <div class="chip chip-feat">
+      <span class="big">30<sup>+</sup></span>
+      <span class="word">artistes &amp; DJs</span>
+    </div>
+
+    <div class="chip chip-time">
+      <span class="big">16h</span>
+      <span class="arrow">→</span>
+      <span class="big">2h</span>
+      <span class="sub">non-stop</span>
+    </div>
+
+    <div class="chip chip-stages">
+      <span class="dots"><i></i><i></i></span>
+      <span class="word">Main + Hippie</span>
+      <span class="sub">2 scènes</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== ARTISTS MARQUEE ===================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>BLOCK &amp; CROWN <em>★</em> &nbsp; · &nbsp; LOGAN &nbsp; · &nbsp; LAURA XKA &nbsp; · &nbsp; HANNA HAÏS &nbsp; · &nbsp; MONTAIGNE &nbsp; · &nbsp; ITSADDAY &nbsp; · &nbsp; DJ MOKKA &nbsp; · &nbsp; VKNGØ &nbsp; · &nbsp; AWKD &nbsp; · &nbsp; VICKKY &nbsp; · &nbsp; <em>+30 artistes</em> &nbsp; · &nbsp;</span>
+    <span>BLOCK &amp; CROWN <em>★</em> &nbsp; · &nbsp; LOGAN &nbsp; · &nbsp; LAURA XKA &nbsp; · &nbsp; HANNA HAÏS &nbsp; · &nbsp; MONTAIGNE &nbsp; · &nbsp; ITSADDAY &nbsp; · &nbsp; DJ MOKKA &nbsp; · &nbsp; VKNGØ &nbsp; · &nbsp; AWKD &nbsp; · &nbsp; VICKKY &nbsp; · &nbsp; <em>+30 artistes</em> &nbsp; · &nbsp;</span>
+  </div>
+</div>
+
+
+<!-- ===================== LINEUP POSTER ===================== -->
+<section class="lineup-poster" id="programme">
+  <div class="head reveal">
+    <div class="day-tabs" role="tablist" id="dayTabs">
+      <button class="on" data-day="all">Les 2 jours</button>
+      <button data-day="fri">Vendredi 08</button>
+      <button data-day="sat">Samedi 09</button>
+    </div>
+  </div>
+
+  <div class="tier reveal" data-day-content="all">
+    <h1 class="tier-headline">
+      BLOCK <span class="red">&amp;</span> CROWN
+    </h1>
+
+    <div class="tier-mid">
+      <span>LOGAN</span>
+      <span>LAURA XKA</span>
+      <span>HANNA HAÏS</span>
+      <span>MONTAIGNE</span>
+    </div>
+
+    <div class="tier-low">
+      <span>ITSADDAY</span>
+      <span>DJ MOKKA</span>
+      <span>DJ VKNGØ</span>
+      <span>DJ AWKD</span>
+      <span>VICKKY</span>
+      <span>THE FRENCHIT</span>
+      <span>SYLVAIN SC SAX</span>
+      <span>+ 18 artistes à venir</span>
+    </div>
+
+    <div class="stamp">
+      <svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1" fill="none"/><path d="M5 7l1.5 1.5L9 5.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Programmation complète dévoilée le 15 juillet
+    </div>
+  </div>
+
+  <div class="tier" data-day-content="fri" hidden>
+    <h1 class="tier-headline">
+      HANNA <span class="red">·</span> HAÏS
+    </h1>
+
+    <div class="tier-mid">
+      <span>LAURA XKA</span>
+      <span>ITSADDAY</span>
+      <span>DJ MOKKA</span>
+    </div>
+
+    <div class="tier-low">
+      <span>VICKKY</span>
+      <span>THE FRENCHIT</span>
+      <span>DJ AWKD</span>
+      <span>SYLVAIN SC SAX</span>
+      <span>+ artistes à venir</span>
+    </div>
+
+    <div class="stamp">
+      <svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1" fill="none"/><path d="M5 7l1.5 1.5L9 5.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Vendredi 8 août · 16h → 2h · Headliner Afro-house
+    </div>
+  </div>
+
+  <div class="tier" data-day-content="sat" hidden>
+    <h1 class="tier-headline">
+      BLOCK <span class="red">&amp;</span> CROWN
+    </h1>
+
+    <div class="tier-mid">
+      <span>LOGAN</span>
+      <span>MONTAIGNE</span>
+    </div>
+
+    <div class="tier-low">
+      <span>DJ VKNGØ</span>
+      <span>SYLVAIN SC SAX</span>
+      <span>ITSADDAY (b2b)</span>
+      <span>DJ MOKKA</span>
+      <span>+ artistes à venir</span>
+    </div>
+
+    <div class="stamp">
+      <svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1" fill="none"/><path d="M5 7l1.5 1.5L9 5.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Samedi 9 août · 16h → 2h · Headliner international
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TIMETABLE ===================== -->
+<section class="timetable" id="timetable">
+  <div class="section-head reveal">
+    <span class="eyebrow">Timetable</span>
+    <h2>Deux jours,<br/>deux scènes, zéro temps mort.</h2>
+    <p>Du DJ découverte sous le soleil à la tête d'affiche jusqu'à 2h, choisis ta trajectoire.</p>
+  </div>
+
+  <div class="timetable-grid reveal">
+    <div class="row header">
+      <div>Heure</div>
+      <div>Main Stage</div>
+      <div>Scène Hippie</div>
+    </div>
+
+    <div class="row">
+      <div class="col-time">16:00</div>
+      <div class="slot col-stage"><div class="name">DJ MOKKA</div><div class="meta">Opening · house warm</div></div>
+      <div class="slot col-stage"><div class="name">VICKKY</div><div class="meta">Découverte locale</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">18:00</div>
+      <div class="slot col-stage"><div class="name">DJ AWKD</div><div class="meta">Disco-edits</div></div>
+      <div class="slot col-stage"><div class="name">ITSADDAY</div><div class="meta">Lounge sunset</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">20:00</div>
+      <div class="slot col-stage"><div class="name">LAURA XKA</div><div class="meta">Live electronica</div></div>
+      <div class="slot col-stage"><div class="name">THE FRENCHIT</div><div class="meta">Vinyl set</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">22:00</div>
+      <div class="slot col-stage headliner"><div class="name">HANNA HAÏS</div><div class="meta">Afro-house · 90 min</div></div>
+      <div class="slot col-stage"><div class="name">DJ VKNGØ</div><div class="meta">Tech-house</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">23:30</div>
+      <div class="slot col-stage headliner"><div class="name">BLOCK &amp; CROWN</div><div class="meta">Headliner · 120 min</div></div>
+      <div class="slot col-stage"><div class="name">MONTAIGNE</div><div class="meta">After-hours · vinyl</div></div>
+    </div>
+    <div class="row">
+      <div class="col-time">02:00</div>
+      <div class="slot col-stage"><div class="name">LOGAN</div><div class="meta">Closing set</div></div>
+      <div class="slot col-stage empty"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SITE PLAN ===================== -->
+<section class="site-plan" id="plan">
+  <div class="section-head reveal">
+    <span class="eyebrow">Le site</span>
+    <h2>Tout est à<br/>moins de 80 secondes.</h2>
+    <p>Main Stage, Marché Hippie, foodtrucks, chill zone : un site compact pour ne rien rater.</p>
+  </div>
+
+  <div class="plan-grid">
+    <div class="plan-img reveal">
+      <svg class="plan-svg" viewBox="0 0 380 520" xmlns="http://www.w3.org/2000/svg" aria-label="Plan du site du 180 Festival">
+        <defs>
+          <pattern id="planStripes" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="14" height="14" fill="#FFEAD9"/>
+            <line x1="0" y1="7" x2="14" y2="7" stroke="#FFD0AF" stroke-width="1.6"/>
+          </pattern>
+        </defs>
+
+        <!-- L-shape ground (vertical column on the left + bulge on the right middle) -->
+        <path d="M 70 30 L 170 30 L 170 200 L 340 200 L 340 410 L 170 410 L 170 470 L 70 470 Z"
+              fill="url(#planStripes)" stroke="rgba(232,56,18,.28)" stroke-width="1.5"/>
+
+        <!-- Main Stage block (top of left column) -->
+        <rect x="78" y="42" width="84" height="138" rx="8" fill="#C7274F" opacity=".9"/>
+        <text x="120" y="105" text-anchor="middle" fill="#fff" font-family="Anton" font-size="15" letter-spacing="1">MAIN</text>
+        <text x="120" y="125" text-anchor="middle" fill="#fff" font-family="Anton" font-size="15" letter-spacing="1">STAGE</text>
+
+        <!-- Chill Zone (small dashed rect below Main Stage in left column) -->
+        <rect x="80" y="218" width="80" height="44" rx="6" fill="rgba(255,255,255,.55)" stroke="rgba(21,17,13,.35)" stroke-width="1.4" stroke-dasharray="4 4"/>
+
+        <!-- Marché Hippie zone (right bulge) -->
+        <rect x="180" y="210" width="150" height="190" rx="8" fill="#FF6A2A" opacity=".18"/>
+        <text x="255" y="252" text-anchor="middle" fill="#FF6A2A" font-family="Anton" font-size="18" letter-spacing=".5">MARCHÉ</text>
+        <text x="255" y="272" text-anchor="middle" fill="#FF6A2A" font-family="Anton" font-size="18" letter-spacing=".5">HIPPIE</text>
+
+        <!-- Stalls suggestion (small rectangles in Marché Hippie) -->
+        <rect x="190" y="370" width="22" height="22" rx="3" fill="rgba(255,106,42,.4)"/>
+        <rect x="220" y="370" width="22" height="22" rx="3" fill="rgba(255,106,42,.4)"/>
+        <rect x="250" y="370" width="22" height="22" rx="3" fill="rgba(255,106,42,.4)"/>
+        <rect x="280" y="370" width="22" height="22" rx="3" fill="rgba(255,106,42,.4)"/>
+        <rect x="310" y="370" width="20" height="22" rx="3" fill="rgba(255,106,42,.4)"/>
+
+        <!-- Sas d'entrée arrow at bottom of left column -->
+        <g transform="translate(120, 440)">
+          <path d="M -12 22 L 0 8 L 12 22" stroke="#15110D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="0" y1="8" x2="0" y2="34" stroke="#15110D" stroke-width="2" stroke-linecap="round"/>
+          <text x="0" y="56" text-anchor="middle" fill="#15110D" font-family="Inter" font-size="9" font-weight="700" letter-spacing="2">ENTRÉE</text>
+        </g>
+
+        <!-- ============== MARKERS ============== -->
+
+        <!-- 1 · Main Stage (inside red Main Stage block) -->
+        <g transform="translate(120, 88)">
+          <circle r="13" fill="#15110D" stroke="#fff" stroke-width="2"/>
+          <text text-anchor="middle" dy="4.5" fill="#fff" font-family="Inter" font-size="13" font-weight="800">1</text>
+        </g>
+
+        <!-- 6 · Chill Zone (inside dashed Chill Zone) -->
+        <g transform="translate(120, 240)">
+          <circle r="13" fill="#15110D" stroke="#fff" stroke-width="2"/>
+          <text text-anchor="middle" dy="4.5" fill="#fff" font-family="Inter" font-size="13" font-weight="800">6</text>
+        </g>
+
+        <!-- 3 · Papin Cave à vin (left column, below Chill Zone) -->
+        <g transform="translate(120, 295)">
+          <circle r="13" fill="#E83812" stroke="#fff" stroke-width="2"/>
+          <text text-anchor="middle" dy="4.5" fill="#fff" font-family="Inter" font-size="13" font-weight="800">3</text>
+        </g>
+
+        <!-- 4 · Bar Bière & Cocktail (left column, lower) -->
+        <g transform="translate(120, 350)">
+          <circle r="13" fill="#FF6A2A" stroke="#fff" stroke-width="2"/>
+          <text text-anchor="middle" dy="4.5" fill="#fff" font-family="Inter" font-size="13" font-weight="800">4</text>
+        </g>
+
+        <!-- 2 · Marché Hippie / Scène Hippie (lower-center of bulge, near stalls) -->
+        <g transform="translate(255, 350)">
+          <circle r="13" fill="#5436D6" stroke="#fff" stroke-width="2"/>
+          <text text-anchor="middle" dy="4.5" fill="#fff" font-family="Inter" font-size="13" font-weight="800">2</text>
+        </g>
+
+        <!-- 5 · Foodtruck (top-right of bulge) -->
+        <g transform="translate(310, 250)">
+          <circle r="13" fill="#22C55E" stroke="#fff" stroke-width="2"/>
+          <text text-anchor="middle" dy="4.5" fill="#fff" font-family="Inter" font-size="13" font-weight="800">5</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="plan-info">
+      <div class="zone reveal">
+        <div class="ic" style="background:#15110D; color:#fff">1</div>
+        <div>
+          <div class="t">Main Stage</div>
+          <div class="d">Scène principale, son & lights Adonix Event.</div>
+        </div>
+        <span class="pill">Stage</span>
+      </div>
+      <div class="zone reveal">
+        <div class="ic" style="background:#5436D6; color:#fff">2</div>
+        <div>
+          <div class="t">Marché Hippie · Scène Hippie</div>
+          <div class="d">20 stands créateurs locaux + scène DJ découverte.</div>
+        </div>
+        <span class="pill" style="background:#5436D6">Stage</span>
+      </div>
+      <div class="zone reveal">
+        <div class="ic" style="background:#E83812; color:#fff">3</div>
+        <div>
+          <div class="t">Papin · Cave à vin</div>
+          <div class="d">Sélection de vins du domaine Papin, dégustation sur place.</div>
+        </div>
+        <span class="pill" style="background:#E83812">Bar</span>
+      </div>
+      <div class="zone reveal">
+        <div class="ic" style="background:#FF6A2A; color:#fff">4</div>
+        <div>
+          <div class="t">Bar · Bière & Cocktail</div>
+          <div class="d">Bières du Bassin pression, cocktails maison.</div>
+        </div>
+        <span class="pill" style="background:#FF6A2A">Bar</span>
+      </div>
+      <div class="zone reveal">
+        <div class="ic" style="background:#22C55E; color:#fff">5</div>
+        <div>
+          <div class="t">Foodtruck · Circuits courts</div>
+          <div class="d">Producteurs du Bassin, vaisselle réutilisable.</div>
+        </div>
+        <span class="pill" style="background:#22C55E">Food</span>
+      </div>
+      <div class="zone reveal">
+        <div class="ic" style="background:#15110D; color:#fff">6</div>
+        <div>
+          <div class="t">Chill Zone</div>
+          <div class="d">Espace détente à l'ombre, hamacs et water-station.</div>
+        </div>
+        <span class="pill" style="background:#15110D">Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="how" id="planning">
+  <div class="section-head reveal">
+    <span class="eyebrow">2 jours · 3 ambiances</span>
+    <h2>Une trajectoire,<br/>trois moments forts.</h2>
+    <p>Du warm-up sous les pins au peak time main stage, le 180 se vit comme un crescendo.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step reveal">
+      <div class="visual">
+        <img src="https://images.unsplash.com/photo-1743889824721-166b0add9ff9?auto=format&fit=crop&w=900&q=80" alt="Open · marché en plein jour"/>
+      </div>
+      <div class="num">01</div>
+      <h3>Open · 16h</h3>
+      <p><b>Ouverture des portes.</b> Apéro tropical, marché hippie, premiers DJ découverte sous les pins.</p>
+    </div>
+
+    <div class="step reveal">
+      <div class="visual">
+        <img src="https://images.unsplash.com/photo-1542237051-69a6aaae7f18?auto=format&fit=crop&w=900&q=80" alt="Golden hour — sunset"/>
+      </div>
+      <div class="num">02</div>
+      <h3>Golden Hour · 19h</h3>
+      <p><b>Le moment qu'on attend.</b> Le soleil tombe sur le bassin, les sets passent en mode disco, foule qui se densifie.</p>
+    </div>
+
+    <div class="step reveal">
+      <div class="visual">
+        <img src="https://images.unsplash.com/photo-1768054481058-fee53b8bdfa1?auto=format&fit=crop&w=900&q=80" alt="Peak · concert nuit lights show"/>
+      </div>
+      <div class="num">03</div>
+      <h3>Peak · 23h → 2h</h3>
+      <p><b>Block &amp; Crown · Hanna Haïs.</b> Tête d'affiche, lights show Adonix, la nuit qui s'étire jusqu'à 2h.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TICKETS ===================== -->
+<section class="tickets" id="tickets">
+  <div class="section-head reveal">
+    <span class="eyebrow">Tickets</span>
+    <h2>Des passes simples,<br/>pas de frais cachés.</h2>
+    <p>Choisissez la formule qui vous correspond. Tout est inclus, jusqu'au dernier set.</p>
+  </div>
+
+  <div class="tickets-grid">
+    <div class="ticket-card reveal">
+      <div class="h">
+        <div>
+          <h4>Pass festival</h4>
+          <p>Inclut Main Stage, Marché Hippie et Chill Zone — toutes les heures live.</p>
+        </div>
+        <div class="toggle" id="passToggle">
+          <button class="on" data-pass="2j">2 jours</button>
+          <button data-pass="1j">1 jour <span class="save">-30%</span></button>
+        </div>
+      </div>
+
+      <div class="price-row">
+        <div class="price"><span id="priceVal">42</span><span class="for"> € / personne</span></div>
+      </div>
+      <div class="price-meta" id="priceLabel">Pass complet · 08 & 09 août 2025</div>
+
+      <div class="ticket-stamps">
+        <div class="stamp-row">
+          <span class="stamp-key">Early bird</span>
+          <span class="stamp-val">−10€ · jusqu'au 30 juin</span>
+        </div>
+        <div class="stamp-row">
+          <span class="stamp-key">−18 ans</span>
+          <span class="stamp-val">−50% sur le pass 1 jour</span>
+        </div>
+        <div class="stamp-row">
+          <span class="stamp-key">Groupe 6+</span>
+          <span class="stamp-val">−15% sur la commande</span>
+        </div>
+      </div>
+
+      <div class="ticket-feats">
+        <div><span class="ic">●</span> Main Stage 2 jours</div>
+        <div><span class="ic">●</span> Marché Hippie</div>
+        <div><span class="ic">●</span> Foodtrucks & bar</div>
+        <div><span class="ic">●</span> Chill Zone à l'ombre</div>
+        <div><span class="ic">●</span> Vestiaires & sécurité</div>
+        <div><span class="ic">●</span> Toilettes & eau gratuite</div>
+      </div>
+
+      <div style="margin-top: 22px;">
+        <a class="btn btn-primary" href="#">Réserver mon pass
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10m0 0L7.5 2.5M12 7l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+        <span style="font-size:12.5px; color:var(--muted); margin-left: 12px;">Annulation gratuite jusqu'au 25 juillet.</span>
+      </div>
+    </div>
+
+    <div class="info-card reveal">
+      <h4 style="margin-bottom: 4px;">Première édition · billetterie ouverte.</h4>
+      <p class="small" style="margin-bottom: 18px;">Le festival est à taille humaine, 3&nbsp;800 places maximum, pas une de plus.</p>
+
+      <div class="map-frame" style="aspect-ratio: 4/4;">
+        <img src="Capture%20d%27%C3%A9cran%202026-05-01%20204038.png" alt="Affiche officielle 180 Festival" style="object-fit: contain; background:#E83812;"/>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top: 18px;">
+        <div>
+          <div style="font-weight:700;">Reste 412 places</div>
+          <div style="font-size:12.5px; color:var(--muted);">sur le pass 2 jours</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px; padding: 6px 12px; background:#15110D; color:#fff; border-radius:999px; font-size:12px; font-weight:700;">
+          <span style="width:8px;height:8px;border-radius:50%;background:#22C55E; box-shadow: 0 0 0 4px rgba(34,197,94,.25);"></span>
+          Live
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY MASONRY ===================== -->
+<section class="gallery-2" id="gallery">
+  <div class="section-head reveal" style="margin-bottom: 50px;">
+    <span class="eyebrow">Avant-goût · 1ʳᵉ édition</span>
+    <h2>Une expérience qui se<br/>raconte mieux en images.</h2>
+    <p>Visuels promo & ambiances de référence · suivez @le180festival pour le reste.</p>
+  </div>
+
+  <div class="masonry">
+    <div class="card"><img src="https://images.unsplash.com/photo-1558355336-905c78a2fae6?auto=format&fit=crop&w=900&q=80" alt="Foule golden hour"><div class="lab">Golden Hour</div></div>
+    <div class="card"><img src="Capture%20d%27%C3%A9cran%202026-05-01%20204038.png" alt="Affiche officielle 180"><div class="lab">Affiche · 2025</div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1723902685718-3a19b2cac465?auto=format&fit=crop&w=900&q=80" alt="Foule peak time"><div class="lab">Peak Time</div></div>
+    <div class="card"><img src="Capture%20d%27%C3%A9cran%202026-05-01%20203829.png" alt="Bar Papin"><div class="lab">Bar Papin</div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1671117444070-c0ab35350bd0?auto=format&fit=crop&w=900&q=80" alt="Lights show stage"><div class="lab">Lights Adonix</div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1542237051-69a6aaae7f18?auto=format&fit=crop&w=900&q=80" alt="Coucher de soleil festival"><div class="lab">Coucher du soleil</div></div>
+    <div class="card"><img src="Capture%20d%27%C3%A9cran%202026-05-01%20204101.png" alt="Édito 180"><div class="lab">Édito</div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1557750674-5e01bafc85c7?auto=format&fit=crop&w=900&q=80" alt="Crowd dancing"><div class="lab">Crowd</div></div>
+  </div>
+</section>
+
+<!-- ===================== AVIS ===================== -->
+<section class="press">
+  <div class="section-head reveal">
+    <span class="eyebrow">Avis · édition 2025</span>
+    <h2>« On savait pas qu'on<br/>en avait autant besoin. »</h2>
+    <p>Ils ont vécu la première édition. Ils en parlent encore.</p>
+  </div>
+
+  <div class="press-grid">
+    <div class="quote reveal">
+      <div class="mark">"</div>
+      <p>Block &amp; Crown au coucher de soleil sur le bassin, c'est exactement ce qui me manquait dans le coin. On revient l'an prochain, c'est sûr.</p>
+      <div class="who">
+        <span style="width:8px;height:8px;border-radius:50%;background:#E83812"></span>
+        <b>Sarah, 28 ans</b> · Bordeaux
+      </div>
+    </div>
+    <div class="quote reveal">
+      <div class="mark">"</div>
+      <p>Le marché hippie entre deux sets, les foodtrucks bassin, l'ambiance familiale en journée puis l'electro qui décolle le soir — vraiment bien pensé.</p>
+      <div class="who">
+        <span style="width:8px;height:8px;border-radius:50%;background:#FF6A2A"></span>
+        <b>Marc, 35 ans</b> · Arcachon
+      </div>
+    </div>
+    <div class="quote reveal">
+      <div class="mark">"</div>
+      <p>Premier festival électro qui se passe vraiment chez nous, à La Teste. Ambiance, son, scéno, tout y était. Bravo aux organisateurs.</p>
+      <div class="who">
+        <span style="width:8px;height:8px;border-radius:50%;background:#5436D6"></span>
+        <b>Léa, 24 ans</b> · La Teste-de-Buch
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq">
+  <div class="section-head reveal">
+    <span class="eyebrow">FAQ</span>
+    <h2>Les questions<br/>qu'on entend le plus.</h2>
+    <p>Rapides réponses sur les billets, l'accès, la nourriture et le déroulé du week-end.</p>
+  </div>
+
+  <div class="faq-wrap">
+    <details class="reveal" open>
+      <summary>Le festival est-il accessible en transports ?</summary>
+      <p>Oui. Gare de La Teste-de-Buch à 12 minutes à pied. Parking vélo gratuit sur place. Un service de navettes part d'Arcachon centre toutes les 30 minutes vendredi et samedi.</p>
+    </details>
+    <details class="reveal">
+      <summary>Y a-t-il à manger sur place ?</summary>
+      <p>4 foodtrucks locaux (poke, pizza wood-fire, tacos, vegan). Bar Bassin Brewing, cave à vin Papin, cocktails maison. Eau gratuite à volonté à plusieurs points d'eau.</p>
+    </details>
+    <details class="reveal">
+      <summary>Quels sont les horaires du festival ?</summary>
+      <p>Vendredi 8 août : 16h → 2h. Samedi 9 août : 16h → 2h. Le marché hippie ouvre dès 16h chaque jour, les têtes d'affiche passent entre 22h et 1h.</p>
+    </details>
+    <details class="reveal">
+      <summary>Puis-je revendre mon pass ?</summary>
+      <p>Oui via notre billetterie officielle, jusqu'au jour J. Les passes sont nominatifs : la revente passe par un transfert sécurisé.</p>
+    </details>
+    <details class="reveal">
+      <summary>Je veux être bénévole.</summary>
+      <p>Excellente idée. Le formulaire bénévoles ouvre le 1er juin — accès gratuit au festival, t-shirt officiel, repas et place pour l'after privé des bénévoles le samedi soir.</p>
+    </details>
+    <details class="reveal">
+      <summary>Le 180 c'est ouvert aux enfants ?</summary>
+      <p>Le marché hippie et la chill zone, oui (gratuit pour les -12 ans). Le main stage est interdit aux mineurs non-accompagnés après 22h.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== CTA STRIP ===================== -->
+<section class="cta-strip">
+  <h2 class="display">
+    On se voit<br/>
+    sur la <span class="red">main stage</span> ?
+  </h2>
+  <p>Prends ta place avant que la billetterie ferme. Le bassin t'attend.</p>
+  <a class="btn btn-primary" href="#">Réserver maintenant
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10m0 0L7.5 2.5M12 7l-4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </a>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="inner">
+    <div class="brand-f">
+      <span class="dot">180</span>
+      180 Festival · La Teste de Buch
+    </div>
+    <ul>
+      <li><a href="#programme">Programme</a></li>
+      <li><a href="#plan">Le site</a></li>
+      <li><a href="#tickets">Tickets</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="mailto:contact@180festival.fr">Contact</a></li>
+    </ul>
+    <div>© 2025 · Édition 03</div>
+    <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Fait avec ❤️ par <a href="https://bassinwebflow.fr" style="color: inherit; text-decoration: none; font-weight: 500;">BassinWebFlow</a></div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Day tabs filter the lineup poster between "Les 2 jours" / "Vendredi 08" / "Samedi 09"
+  const dayBtns = document.querySelectorAll('#dayTabs button');
+  const dayTiers = document.querySelectorAll('[data-day-content]');
+  dayBtns.forEach(b => b.addEventListener('click', () => {
+    dayBtns.forEach(o => o.classList.remove('on'));
+    b.classList.add('on');
+    const day = b.dataset.day;
+    dayTiers.forEach(t => {
+      const match = t.dataset.dayContent === day;
+      t.hidden = !match;
+      if (match) t.classList.add('in'); // keep reveal-in state when switching
+    });
+  }));
+
+  // Pass toggle
+  const passBtns = document.querySelectorAll('#passToggle button');
+  const priceVal = document.getElementById('priceVal');
+  const priceLabel = document.getElementById('priceLabel');
+  passBtns.forEach(b => b.addEventListener('click', () => {
+    passBtns.forEach(o => o.classList.remove('on'));
+    b.classList.add('on');
+    if (b.dataset.pass === '2j') {
+      priceVal.textContent = '42';
+      priceLabel.textContent = "Pass complet · 08 & 09 août 2025";
+    } else {
+      priceVal.textContent = '28';
+      priceLabel.textContent = "Pass 1 jour · au choix vendredi ou samedi";
+    }
+  }));
+</script>
+
+</body>
+</html>
