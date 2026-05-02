@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <title>180 Festival — La Teste de Buch · 08 & 09 Août 2026</title>
-Le 180 Festival : deux jours de musique, marché créateurs et bonnes vibes au cœur du Bassin d'Arcachon. 08 & 09 août 2026, 180 av Denis Papin, La Teste de Buch." />
+<meta name="description" content="Le 180 Festival : deux jours de musique, marché créateurs et bonnes vibes au cœur du Bassin d'Arcachon. 08 & 09 août 2026, 180 av Denis Papin, La Teste de Buch." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,29 +111,97 @@ Le 180 Festival : deux jours de musique, marché créateurs et bonnes vibes au c
     transition: transform .2s;
   }
   .nav .cta:hover{ transform: translateY(-1px); }
-  .burger-toggle {
-    display: none; width: 36px; height: 36px; padding: 8px;
-    background: none; border: none; color: #F8F2E8;
-    margin-left: auto; cursor: pointer;
-    align-items: center; justify-content: center; z-index: 51;
+  /* -------- Burger menu (mobile) -------- */
+  .burger-toggle{
+    display: none; width: 38px; height: 38px;
+    background: none; border: none; cursor: pointer;
+    position: relative; margin-left: 4px;
+    -webkit-tap-highlight-color: transparent;
   }
-  .burger-toggle svg { display: block; }
-  .burger-menu {
-    display: none; position: fixed; top: 0; left: 0;
-    width: 100%; height: 100vh; background: rgba(21,17,13,.95);
-    backdrop-filter: blur(20px); z-index: 49;
-    padding-top: 60px; padding: 60px var(--pad) var(--pad);
+  .burger-toggle span{
+    display: block; width: 20px; height: 2px;
+    background: #F8F2E8; border-radius: 2px;
+    position: absolute; left: 9px;
+    transition: transform .3s ease, opacity .2s ease;
   }
-  .burger-menu.open { display: flex; flex-direction: column; }
-  .burger-menu a { display: block; padding: 14px 0; font-size: 16px; color: #E8DECF;
-    text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.08); }
-  .burger-menu a:hover { color: #fff; }
-  .burger-menu .cta { margin-top: 20px; padding: 14px 22px; background: linear-gradient(135deg, #FF8252, var(--accent));
-    color: #fff; font-weight: 600; border-radius: 999px; text-align: center; }
+  .burger-toggle span:nth-child(1){ top: 12px; }
+  .burger-toggle span:nth-child(2){ top: 18px; }
+  .burger-toggle span:nth-child(3){ top: 24px; }
+  .burger-toggle.active span:nth-child(1){ top: 18px; transform: rotate(45deg); }
+  .burger-toggle.active span:nth-child(2){ opacity: 0; }
+  .burger-toggle.active span:nth-child(3){ top: 18px; transform: rotate(-45deg); }
+
+  .burger-overlay{
+    position: fixed; inset: 0; z-index: 48;
+    background: rgba(21,17,13,.97);
+    backdrop-filter: blur(24px) saturate(140%);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 80px var(--pad) 40px;
+    opacity: 0; visibility: hidden;
+    transition: opacity .35s ease, visibility .35s ease;
+  }
+  .burger-overlay.open{ opacity: 1; visibility: visible; }
+
+  .burger-overlay nav{
+    display: flex; flex-direction: column;
+    align-items: center; gap: 6px; width: 100%;
+    max-width: 320px;
+  }
+  .burger-overlay nav a{
+    display: block; width: 100%;
+    padding: 16px 0; text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 28px; letter-spacing: .02em;
+    text-transform: uppercase;
+    color: #E8DECF; text-decoration: none;
+    opacity: 0; transform: translateY(16px);
+    transition: opacity .3s ease, transform .3s ease, color .2s ease;
+  }
+  .burger-overlay.open nav a{
+    opacity: 1; transform: translateY(0);
+  }
+  .burger-overlay.open nav a:nth-child(1){ transition-delay: .08s; }
+  .burger-overlay.open nav a:nth-child(2){ transition-delay: .12s; }
+  .burger-overlay.open nav a:nth-child(3){ transition-delay: .16s; }
+  .burger-overlay.open nav a:nth-child(4){ transition-delay: .20s; }
+  .burger-overlay.open nav a:nth-child(5){ transition-delay: .24s; }
+  .burger-overlay.open nav a:nth-child(6){ transition-delay: .28s; }
+  .burger-overlay nav a:hover, .burger-overlay nav a:active{ color: #fff; }
+  .burger-overlay nav a.burger-cta{
+    margin-top: 18px;
+    padding: 14px 28px; border-radius: 999px;
+    background: linear-gradient(135deg, #FF8252, var(--accent));
+    color: #fff; font-family: 'Inter', sans-serif;
+    font-size: 15px; font-weight: 600;
+    text-transform: none; letter-spacing: 0;
+    box-shadow: 0 10px 30px -8px rgba(232,56,18,.5);
+    width: auto;
+  }
+  .burger-overlay .burger-footer{
+    margin-top: auto; padding-top: 32px;
+    text-align: center; font-size: 12px;
+    color: rgba(232,222,207,.35); letter-spacing: .04em;
+  }
+
   @media (max-width: 760px){
-    .nav .link, .nav .login { display: none; }
-    .nav { padding: 6px 6px 6px 14px; }
-    .burger-toggle { display: flex; }
+    .nav .link, .nav .login, .nav .cta{ display: none; }
+    .nav{ padding: 6px 6px 6px 14px; }
+    .burger-toggle{ display: block; }
+    .hero{ min-height: calc(100vh - 60px); padding-top: 100px; padding-bottom: 60px; }
+    .hero .sub{ font-size: 15px; }
+    footer .inner{ gap: 16px; }
+    footer ul{ gap: 14px; }
+    footer ul a{ font-size: 12.5px; }
+  }
+  @media (max-width: 480px){
+    .hero h1{ font-size: clamp(48px, 14vw, 80px); }
+    .hero .ctas{ flex-direction: column; align-items: center; }
+    .btn{ width: 100%; justify-content: center; }
+    .hero .meta{ flex-direction: column; gap: 4px; }
+    .hero .meta > span:nth-child(2),
+    .hero .meta > span:nth-child(4){ display: none; }
+    footer{ padding: 32px var(--pad); }
   }
 
   /* -------- Hero -------- */
@@ -1094,23 +1162,22 @@ Le 180 Festival : deux jours de musique, marché créateurs et bonnes vibes au c
     <a class="login" href="#">Bénévole</a>
     <a class="cta" href="#tickets">Réserver</a>
     <button class="burger-toggle" id="burgerToggle" aria-label="Menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 </div>
 
-<!-- ===================== BURGER MENU ===================== -->
-<div class="burger-menu" id="burgerMenu">
-  <a href="#programme">Programme</a>
-  <a href="#plan">Le site</a>
-  <a href="#tickets">Tickets</a>
-  <a href="#faq">FAQ</a>
-  <a href="#">Bénévole</a>
-  <a class="cta" href="#tickets">Réserver</a>
+<!-- ===================== BURGER OVERLAY ===================== -->
+<div class="burger-overlay" id="burgerOverlay">
+  <nav>
+    <a href="#programme">Programme</a>
+    <a href="#plan">Le site</a>
+    <a href="#tickets">Tickets</a>
+    <a href="#faq">FAQ</a>
+    <a href="#">Bénévole</a>
+    <a class="burger-cta" href="#tickets">Réserver mon pass</a>
+  </nav>
+  <div class="burger-footer">180 Festival · La Teste de Buch</div>
 </div>
 
 <!-- ===================== HERO ===================== -->
@@ -1712,19 +1779,13 @@ Le 180 Festival : deux jours de musique, marché créateurs et bonnes vibes au c
 </footer>
 
 <script>
-  // Burger menu toggle
-  const burgerToggle = document.getElementById('burgerToggle');
-  const burgerMenu = document.getElementById('burgerMenu');
-  if (burgerToggle && burgerMenu) {
-    burgerToggle.addEventListener('click', () => {
-      burgerMenu.classList.toggle('open');
-    });
-    document.querySelectorAll('.burger-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerMenu.classList.remove('open');
-      });
-    });
-  }
+  // Burger menu
+  const burgerBtn = document.getElementById('burgerToggle');
+  const burgerOverlay = document.getElementById('burgerOverlay');
+  function closeBurger(){ burgerBtn.classList.remove('active'); burgerOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+  function openBurger(){ burgerBtn.classList.add('active'); burgerOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  burgerBtn.addEventListener('click', () => { burgerOverlay.classList.contains('open') ? closeBurger() : openBurger(); });
+  burgerOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', closeBurger));
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
