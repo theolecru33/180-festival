@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>180 Festival — La Teste de Buch · 08 & 09 Août 2025</title>
-<meta name="description" content="Le 180 Festival : deux jours de musique, marché créateurs et bonnes vibes au cœur du Bassin d'Arcachon. 08 & 09 août 2025, 180 av Denis Papin, La Teste de Buch." />
+<title>180 Festival — La Teste de Buch · 08 & 09 Août 2026</title>
+Le 180 Festival : deux jours de musique, marché créateurs et bonnes vibes au cœur du Bassin d'Arcachon. 08 & 09 août 2026, 180 av Denis Papin, La Teste de Buch." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,9 +111,29 @@
     transition: transform .2s;
   }
   .nav .cta:hover{ transform: translateY(-1px); }
+  .burger-toggle {
+    display: none; width: 36px; height: 36px; padding: 8px;
+    background: none; border: none; color: #F8F2E8;
+    margin-left: auto; cursor: pointer;
+    align-items: center; justify-content: center; z-index: 51;
+  }
+  .burger-toggle svg { display: block; }
+  .burger-menu {
+    display: none; position: fixed; top: 0; left: 0;
+    width: 100%; height: 100vh; background: rgba(21,17,13,.95);
+    backdrop-filter: blur(20px); z-index: 49;
+    padding-top: 60px; padding: 60px var(--pad) var(--pad);
+  }
+  .burger-menu.open { display: flex; flex-direction: column; }
+  .burger-menu a { display: block; padding: 14px 0; font-size: 16px; color: #E8DECF;
+    text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .burger-menu a:hover { color: #fff; }
+  .burger-menu .cta { margin-top: 20px; padding: 14px 22px; background: linear-gradient(135deg, #FF8252, var(--accent));
+    color: #fff; font-weight: 600; border-radius: 999px; text-align: center; }
   @media (max-width: 760px){
-    .nav .link, .nav .login{ display: none; }
-    .nav{ padding: 6px 6px 6px 14px; }
+    .nav .link, .nav .login { display: none; }
+    .nav { padding: 6px 6px 6px 14px; }
+    .burger-toggle { display: flex; }
   }
 
   /* -------- Hero -------- */
@@ -148,23 +168,6 @@
     content: ""; position: absolute; inset: 0; z-index: -1;
     background: radial-gradient(80% 60% at 50% 0%, rgba(255,255,255,.45), transparent 70%);
     pointer-events: none;
-  }
-  .hero-bg-tag{
-    position: absolute; top: 84px; right: var(--pad); z-index: 3;
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 7px 14px; border-radius: 999px;
-    background: rgba(21,17,13,.7);
-    backdrop-filter: blur(12px) saturate(140%);
-    color: #F8F2E8;
-    font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
-  }
-  .hero-bg-tag .dot{
-    width: 7px; height: 7px; border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 4px rgba(232,56,18,.25);
-  }
-  @media (max-width: 760px){
-    .hero-bg-tag{ top: 78px; right: 16px; font-size: 10.5px; padding: 5px 11px; }
   }
   .hero-inner{ position: relative; z-index: 2; max-width: 980px; margin: 0 auto; }
   .hero h1{
@@ -753,15 +756,16 @@
   }
   footer .inner{
     max-width: var(--maxw); margin: 0 auto;
-    display: flex; flex-wrap: wrap; gap: 16px;
-    justify-content: space-between; align-items: center;
+    display: flex; flex-wrap: wrap; gap: 32px;
+    justify-content: space-between; align-items: flex-start;
     color: var(--muted); font-size: 13.5px;
   }
   footer .brand-f{ display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; }
   footer .brand-f .dot{ width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: grid; place-items: center; color: #fff; font-family: 'Anton'; font-size: 12px; }
-  footer ul{ list-style: none; padding: 0; margin: 0; display: flex; gap: 22px; flex-wrap: wrap; }
+  footer ul{ list-style: none; padding: 0; margin: 0; display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
   footer ul a{ text-decoration: none; }
   footer ul a:hover{ color: var(--ink); }
+  footer .inner > div:nth-child(n+3){ display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
 
   /* -------- Reveal -------- */
   .reveal{ opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
@@ -1088,7 +1092,24 @@
     <a class="link" href="#faq">FAQ</a>
     <a class="login" href="#">Bénévole</a>
     <a class="cta" href="#tickets">Réserver</a>
+    <button class="burger-toggle" id="burgerToggle" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
   </nav>
+</div>
+
+<!-- ===================== BURGER MENU ===================== -->
+<div class="burger-menu" id="burgerMenu">
+  <a href="#programme">Programme</a>
+  <a href="#plan">Le site</a>
+  <a href="#tickets">Tickets</a>
+  <a href="#faq">FAQ</a>
+  <a href="#">Bénévole</a>
+  <a class="cta" href="#tickets">Réserver</a>
 </div>
 
 <!-- ===================== HERO ===================== -->
@@ -1684,12 +1705,26 @@
       <li><a href="#faq">FAQ</a></li>
       <li><a href="mailto:contact@180festival.fr">Contact</a></li>
     </ul>
-    <div>© 2025 · Édition 03</div>
+    <div>© 2026 · Édition 04</div>
     <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Fait avec ❤️ par <a href="https://bassinwebflow.fr" style="color: inherit; text-decoration: none; font-weight: 500;">BassinWebFlow</a></div>
   </div>
 </footer>
 
 <script>
+  // Burger menu toggle
+  const burgerToggle = document.getElementById('burgerToggle');
+  const burgerMenu = document.getElementById('burgerMenu');
+  if (burgerToggle && burgerMenu) {
+    burgerToggle.addEventListener('click', () => {
+      burgerMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.burger-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        burgerMenu.classList.remove('open');
+      });
+    });
+  }
+
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
